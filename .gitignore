@@ -111,8 +111,8 @@ $RECYCLE.BIN/
 lib/
 data/
 
+public/images
 
-public/
 
 yarn.lock
 yarn-error.log
