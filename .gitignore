@@ -110,3 +110,9 @@ $RECYCLE.BIN/
 # Others
 lib/
 data/
+
+
+public/
+
+yarn.lock
+yarn-error.log
