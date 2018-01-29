@@ -15,7 +15,6 @@ const move = (oldPath, newPath) => {
 };
 
 const moveFiles = (files, filePath) => {
-
   /**
    * @todo
    * try to make directory creation async.
@@ -35,7 +34,7 @@ const moveFiles = (files, filePath) => {
 };
 
 module.exports = function (options = {}) {
-  return function fileUpload(hook) {
+  return function fileUpload (hook) {
     return new Promise((resolve, reject) => {
       const { type, filenames } = hook.data;
       let path = '';
@@ -51,11 +50,11 @@ module.exports = function (options = {}) {
           const files = filenames.map(filename => `${path}/${filename}`);
           hook.data = {
             files: files
-          }
+          };
           resolve(hook);
         },
         () => {
-          throw new Error('File upload failed')
+          throw new Error('File upload failed');
         }
       );
     });

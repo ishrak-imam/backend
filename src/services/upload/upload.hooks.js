@@ -1,5 +1,5 @@
 
-const fileUpload = require('../../hooks/file-upload')
+const fileUpload = require('../../hooks/file-upload');
 
 module.exports = {
   before: {

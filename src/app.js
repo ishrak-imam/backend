@@ -22,23 +22,20 @@ const authentication = require('./authentication');
 
 const mongodb = require('./mongodb');
 
-
 const multer = require('multer');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.resolve(__dirname, './uploads'))
+    cb(null, path.resolve(__dirname, './uploads'));
   },
   filename: function (req, file, cb) {
-    var extension = file.originalname.split(".");
-    filename = `${Date.now()}.${extension[extension.length - 1]}`
+    var extension = file.originalname.split('.');
+    const filename = `${Date.now()}.${extension[extension.length - 1]}`;
     cb(null, filename);
   }
 });
 const uploadMiddleware = multer({ storage }).any();
 
-
 const app = feathers();
-
 
 // Load app configuration
 app.configure(configuration());
@@ -52,13 +49,10 @@ app.use(favicon(path.join(app.get('public'), 'favicon.ico')));
 // Host the public folder
 app.use('/', feathers.static(app.get('public')));
 
-
 app.use('/upload', uploadMiddleware, (req, res, next) => {
-  req.body['filenames'] = req.files.map(file => file.filename)
+  req.body['filenames'] = req.files.map(file => file.filename);
   next();
 });
-
-
 
 // Set up Plugins and providers
 app.configure(hooks());

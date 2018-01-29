@@ -14,7 +14,7 @@ class Service {
     });
   }
 
-  create(data, params) {
+  create (data, params) {
     if (Array.isArray(data)) {
       return Promise.all(data.map(current => this.create(current)));
     }
