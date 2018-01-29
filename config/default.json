@@ -52,7 +52,7 @@
     },
     "cookie": {
       "enabled": true,
-      "name": "feathers-jwt",
+      "name": "jwt-token",
       "httpOnly": false,
       "secure": false
     }
