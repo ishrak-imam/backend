@@ -111,7 +111,7 @@ $RECYCLE.BIN/
 lib/
 data/
 
-public/images
+public/images/*
 
 
 yarn.lock
