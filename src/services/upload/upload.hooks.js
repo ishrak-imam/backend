@@ -1,15 +1,16 @@
 
 const fileUpload = require('../../hooks/file-upload');
+const {disallow} = require('feathers-hooks-common');
 
 module.exports = {
   before: {
-    all: [fileUpload()],
-    find: [],
-    get: [],
-    create: [],
-    update: [],
-    patch: [],
-    remove: []
+    all: [],
+    find: disallow(),
+    get: disallow(),
+    create: [fileUpload()],
+    update: disallow(),
+    patch: disallow(),
+    remove: disallow()
   },
 
   after: {
