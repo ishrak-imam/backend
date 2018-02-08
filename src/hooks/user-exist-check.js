@@ -5,20 +5,13 @@ const errors = require('@feathersjs/errors');
 
 // eslint-disable-next-line no-unused-vars
 module.exports = function (options = {}) {
-  // return async context => {
-  //   return context;
-  // };
-
-  return function (hook) {
-    return hook.app.service('users').find({
+  return async hook => {
+    const user = await hook.app.service('users').find({
       query: {
         email: hook.data.email
       }
-    }).then(res => {
-      if (res.length !== 0) {
-        throw new errors.Conflict(`Email ${hook.data.email} already exists`);
-      }
-      return Promise.resolve(hook);
     });
+    if (user.length !== 0) { throw new errors.Conflict(`Email ${hook.data.email} already exists`); }
+    return hook;
   };
 };
