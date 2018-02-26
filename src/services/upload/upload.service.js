@@ -1,6 +1,6 @@
 // Initializes the `upload` service on path `/upload`
 const createService = require('./upload.class.js');
-const hooks = require('./upload.hooks')
+const hooks = require('./upload.hooks');
 
 module.exports = function () {
   const app = this;
