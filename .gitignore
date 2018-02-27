@@ -113,6 +113,6 @@ data/
 
 public/images/*
 
-
+.vscode
 yarn.lock
 yarn-error.log
