@@ -13,7 +13,6 @@ module.exports = function (app) {
 
   // A global publisher that sends all events to all authenticated clients
   app.publish((data, context) => {
-    console.log(data);
     return app.channel('authenticated');
   });
 };

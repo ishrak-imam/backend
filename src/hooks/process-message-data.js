@@ -4,14 +4,16 @@
 const errors = require('@feathersjs/errors');
 
 const isValid = (data) => {
-  const {from, to, text} = data;
+  const {from,
+    // to,
+    text} = data;
   const obj = {err: true};
   if (!from) {
     return {...obj, msg: 'From not specified'};
   }
-  if (!to) {
-    return {...obj, msg: 'To not specified'};
-  }
+  // if (!to) {
+  //   return {...obj, msg: 'To not specified'};
+  // }
   if (!text) {
     return {...obj, msg: 'Text not specified'};
   }
