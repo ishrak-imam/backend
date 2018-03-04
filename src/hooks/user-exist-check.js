@@ -11,7 +11,7 @@ module.exports = function (options = {}) {
         email: hook.data.email
       }
     });
-    if (user.length !== 0) { throw new errors.Conflict(`Email ${hook.data.email} already exists`); }
+    if (user.data.length > 0) { throw new errors.Conflict(`Email ${hook.data.email} already exists`); }
     return hook;
   };
 };
