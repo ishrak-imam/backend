@@ -28,6 +28,8 @@ module.exports = function (options = {}) {
     if (check.err) {
       return Promise.reject(new errors.BadRequest(check.msg));
     }
+    const {from, text} = data;
+    context.data = {from, text, seen: false};
     return context;
   };
 };
