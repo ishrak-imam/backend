@@ -1,5 +1,5 @@
 {
-  "host": "localhost",
+  "host": "192.168.1.122",
   "port": 8888,
   "public": "../public/",
   "paginate": {
@@ -8,53 +8,12 @@
   },
   "authentication": {
     "secret": "73d6f95be1268484c1a939173274420b17c5cb67b405bae2b964e97b7741be7047ca5242086141e8d2e26af99d41e7694660b273a58b024e558d48fe502be47a85dc4b8de9f6abdb0836b4c0df024dae86b2d2cbf1697c72f8ae3086640ceccb694e09875135cb75e87f6c98cbd3e557e81ece1bebe5bae81a870bb510b078e237f60fed9d531bd6b8b6364c8e4bce81c9cea97fa2459384c3c88591a5750d438e1d7f4bca29b0d72049b3bfea9a825a504546105c4ca73ab30f799aec4b521182f4952a3a9fc5e8f7a21c790e2e1213d1247238c2da0d0357f3107da425b3c984bb0d982065524c6de1dff201059540b4f6e767faaa01e0082baf38a541b709",
-    "strategies": [
-      "jwt",
-      "local"
-    ],
-    "path": "/authentication",
-    "service": "users",
     "jwt": {
-      "header": {
-        "type": "access"
-      },
-      "audience": "https://yourdomain.com",
-      "subject": "anonymous",
-      "issuer": "feathers",
-      "algorithm": "HS256",
-      "expiresIn": "1d"
-    },
-    "local": {
-      "entity": "user",
-      "usernameField": "email",
-      "passwordField": "password"
-    },
-    "facebook": {
-      "clientID": "your facebook client id",
-      "clientSecret": "your facebook client secret",
-      "successRedirect": "/",
-      "scope": [
-        "public_profile",
-        "email"
-      ],
-      "profileFields": [
-        "id",
-        "displayName",
-        "first_name",
-        "last_name",
-        "email",
-        "gender",
-        "profileUrl",
-        "birthday",
-        "picture",
-        "permissions"
-      ]
-    },
-    "cookie": {
-      "enabled": true,
-      "name": "jwt-token",
-      "httpOnly": false,
-      "secure": false
+      "aud": "https://yourdomain.com",
+      "sub": "anonymous",
+      "iss": "feathers",
+      "alg": "HS256",
+      "exp": 10
     }
   },
   "mongodb": "mongodb://backend_for_blog_admin:111111@ds259305.mlab.com:59305/backend_for_site"
