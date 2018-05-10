@@ -1,6 +1,6 @@
-const { authenticate } = require('@feathersjs/authentication').hooks;
+const {authenticate} = require('@feathersjs/authentication').hooks;
 const processMessageData = require('../../hooks/process-message-data');
-const { fastJoin } = require('feathers-hooks-common');
+const {fastJoin} = require('feathers-hooks-common');
 
 module.exports = {
   before: {
