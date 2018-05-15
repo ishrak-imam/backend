@@ -21,7 +21,7 @@ module.exports = function (options = {}) {
       }
     }
     context.result = {accessToken: jwt.sign(
-      {_id, firstName, lastName, email, ...config.jwt, ...config.customJwtConfig},
+      {userId: _id, firstName, lastName, email, ...config.jwt, ...config.customJwtConfig},
       config.secret
     )};
     return context;
