@@ -1,8 +1,8 @@
 const assert = require('assert');
 const feathers = require('@feathersjs/feathers');
-const userExistCheck = require('../../src/hooks/user-exist-check');
+const processUserData = require('../../src/hooks/process-user-data');
 
-describe('\'user-exist-check\' hook', () => {
+describe('\'processUserData\' hook', () => {
   let app;
 
   beforeEach(() => {

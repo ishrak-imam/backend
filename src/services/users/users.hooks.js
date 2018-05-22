@@ -2,8 +2,7 @@ const { authenticate } = require('@feathersjs/authentication').hooks;
 const commonHooks = require('feathers-hooks-common');
 const { restrictToOwner } = require('feathers-authentication-hooks');
 const { hashPassword } = require('@feathersjs/authentication-local').hooks;
-
-const userExistCheck = require('../../hooks/user-exist-check');
+const processUserData = require('../../hooks/process-user-data');
 
 const restrict = [
   authenticate('jwt'),
@@ -18,7 +17,7 @@ module.exports = {
     all: [],
     find: [authenticate('jwt')],
     get: [...restrict],
-    create: [userExistCheck(), hashPassword()],
+    create: [processUserData(), hashPassword()],
     update: [...restrict, hashPassword()],
     patch: [...restrict, hashPassword()],
     remove: [...restrict]
